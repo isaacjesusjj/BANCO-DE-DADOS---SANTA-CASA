@@ -1,0 +1,17 @@
+RESPOSTAS
+-- 1. Exibir os nomes dos livros, que custam mais de R$ 100,00
+mostrando o as iniciais em maiúsculo e o valor:
+select  initcap(liv_titulo) as nome_livro
+, liv_preco as valor
+from livro
+where liv_preco > 100;
+
+-- 2. Mostrar qual é o livro mais caro, mostrando somente o valor
+SELECT MAX(liv_preco) AS maior_valor
+FROM livro;
+
+-- 3. Contar quantas editoras existem
+SELECT COUNT(*) AS quantidade_editoras
+FROM editora;
+
+-- 4. 
