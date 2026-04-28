@@ -14,4 +14,25 @@ FROM livro;
 SELECT COUNT(*) AS quantidade_editoras
 FROM editora;
 
--- 4. 
+-- 4. Mostrar o nome do livro e a data de lançamento no formato DD/MM/YYYY
+-- dos livros da editora com número 1
+SELECT liv_titulo AS nome_livro,
+TO_CHAR(liv_lancamento, 'DD/MM/YYYY') AS data_lancamento
+FROM livro
+WHERE edi_codigo = 1;
+
+-- 5. Mostrar quantos autores existem no banco de dados
+SELECT COUNT(*) AS quantidade_autores
+FROM autor;
+
+-- 6. Mostrar os nomes dos livros em maiúsculo
+SELECT UPPER(liv_titulo) AS nome_livro
+FROM livro;
+
+-- 7. Montar a expressão:
+-- “O livro XXX tem YYY caracteres”
+SELECT 'O livro ' || liv_titulo || ' tem ' || LENGTH(liv_titulo) || ' caracteres' AS expressao
+FROM livro;
+
+
+
